@@ -4,7 +4,7 @@ This is a course requirement for RCS-402 Software Engineering Course of the Depa
 
 Group SMS
 
-Anushka (IT)
-Mayank Mishra (IT)
-Naman Agrawal (IT)
-Nikhil Kushwaha (IT)
+Anushka (IT)<br/>
+Mayank Mishra (IT)<br/>
+Naman Agrawal (IT)<br/>
+Nikhil Kushwaha (IT)<br/>

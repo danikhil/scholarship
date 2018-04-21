@@ -21,7 +21,7 @@
                 <a class="nav-link" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">Step 3</a>
             </li>
         </ul>
-        <form method="post">
+        <form method="post" action="connect.php">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
                     <div class="form-row">

@@ -13,7 +13,7 @@
 		<form method="post" action="../connectteacher.php">
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for=inputName>Name</label>
+					<label for="inputName">Name</label>
 					<input type="text" class="form-control" id=inputName placeholder="As mentioned in your marksheet" required>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-3">
-					<label for=inputDesig>Designation</label>
+					<label for="inputDesig">Designation</label>
 					<select type=text class=form-control id=inputCourse required>
                                 <option>Associate Proffessor</option>
                                 <option>Proffessor</option>
@@ -45,7 +45,7 @@
                             </select>
 				</div>
 				<div class="form-group col-md-6">
-					<label for=inputDept>Department</label>
+					<label for="inputDept">Department</label>
 					<select type=text class=form-control id=inputCourse required>
                                 <option>Chemical Engineering</option>
                                 <option>Civil Engineering</option>

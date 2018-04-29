@@ -2,8 +2,7 @@
 $user = 'root';
 $pass = '';
 $db = 'scholarshipdb';
-$db = new mysqli('localhost', $user, $pass, $db) or die();
-mysql_select_db("scholarshipdb")or die("no db found");
+$conn = new mysqli('localhost', $user, $pass, $db) or die ("you are not connected");
 if(isset($_POST['submit']))
 {
     $name=$_POST['inputName'];
@@ -29,7 +28,7 @@ if(isset($_POST['submit']))
     $FI=$_POST['inputFatherIncome'];
     $MI=$_POST['inputMotherIncome'];
     $Inc=$_POST['inputIncome'];
-$query="insert inta data(Name,DOB,Gender,Email,Phone,Course,Year,Rollnumber,UPRollnumber,Category,Rank,CAddress,PAddress,City,State,Pincode,Fathername,Mothername,Fatherocc,Motherocc,FIncome,MIncome,Income)values('$name','$DOB','$Gen',' $Mail','$MOB','$Cou','$Year','$Roll',' $URoll','$Cat','$Rank','$CAdd','$PAdd','$City','$State','$Pin','$FN','$MN','$FO','$MO','$FI','$MI','$Inc')";
+$query="INSERT INTO data(Name,DOB,Gender,Email,Phone,Course,Year,Rollnumber,UPRollnumber,Category,Rank,CAddress,PAddress,City,State,Pincode,Fathername,Mothername,Fatherocc,Motherocc,FIncome,MIncome,Income)values('$name','$DOB','$Gen',' $Mail','$MOB','$Cou','$Year','$Roll',' $URoll','$Cat','$Rank','$CAdd','$PAdd','$City','$State','$Pin','$FN','$MN','$FO','$MO','$FI','$MI','$Inc')";
 
 }
 echo "great work";

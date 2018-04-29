@@ -21,7 +21,7 @@
                 <a class="nav-link" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">Step 3</a>
             </li>
         </ul>
-        <form method="post" action="connect.php">
+        <form method="post" action="../connect.php">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
                     <div class="form-row">
@@ -255,7 +255,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="../assests/js/main.js"></script>
+    <script src="../assests/js/student/main.js"></script>
 
 </body>
 

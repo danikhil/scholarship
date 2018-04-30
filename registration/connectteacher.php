@@ -18,7 +18,7 @@ $query="INSERT INTO data(Name,Email,Phone,Designation,Department)values('$name',
 
 if(!mysql_query($query,$conn))
 {
-    die("Error in inserting records:".mysql_error());
+    die("Error in inserting records:".mysql_error);
 }
 else
 {

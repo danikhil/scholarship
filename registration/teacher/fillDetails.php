@@ -37,7 +37,7 @@
 			<div class="form-row">
 				<div class="form-group col-md-3">
 					<label for="inputDesig">Designation</label>
-					<select type=text class=form-control id=inputCourse required>
+					<select type=text class=form-control id=inputDesig required>
                                 <option>Associate Proffessor</option>
                                 <option>Proffessor</option>
                                 <option>Head Of Dept</option>
@@ -46,7 +46,7 @@
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputDept">Department</label>
-					<select type=text class=form-control id=inputCourse required>
+					<select type=text class=form-control id=inputDept required>
                                 <option>Chemical Engineering</option>
                                 <option>Civil Engineering</option>
                                 <option>Computer Science</option>

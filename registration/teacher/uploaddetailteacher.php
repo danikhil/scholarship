@@ -27,23 +27,23 @@ if( isset($_POST['submit'])) {
 	$mobile= $_POST['inputMobile'];
 	$desig= $_POST['inputDesig'];
 	$dept= $_POST['inputDept'];
-
-	$ins_query=("INSERT INTO teacher SET Name='".$conn->real_escape_string($name)."', Email='$email', Mobile No='".$conn->real_escape_string($mobile)."', Designation='".$conn->real_escape_string($desig)."', Department='".$conn->real_escape_string($dept)."'");
 	
-}
-
-if($conn->query($ins_query)) {
-?>
+	$ins_query="INSERT INTO `teacher`(`Name`, `Email`,`Mobile No`, `Designation`, `Department`) VALUES ('$name', '$email', '$mobile', '$desig', '$dept')";
+	
+	if(mysqli_query($conn, $ins_query)) {
+	?>
 	<script>
 		window.location = "../success.php"
 	</script>
 	<?php
 	
-}
+	}
 
-else {
-    die("Error in inserting records:".mysql_error);
-}
+	else {
+    	die("Error in inserting records:".mysql_error);
+	}
 
-mysqli_close($conn);
+	mysqli_close($conn);
+	
+	}
 ?>

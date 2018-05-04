@@ -22,7 +22,7 @@
 				<h2>Faculty Login</h2>
 				<label>
       				<span>Email</span>
-      				<input type="email" placeholder="dhadhuahw"/>
+      				<input type="email"/>
     			</label>
 				<label>
       				<span>Password</span>

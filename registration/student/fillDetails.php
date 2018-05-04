@@ -27,17 +27,17 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for=inputName>Name</label>
-                            <input type="text" class="form-control" id=inputName placeholder="As mentioned in your marksheet" required>
+                            <input type="text" class="form-control" id=inputName name=inputName placeholder="As mentioned in your marksheet" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for=inputDOB>Date of Birth</label>
-                            <input type="date" class="form-control" id="inputDOB" placeholder="As mentioned in your marksheet" required>
+                            <input type="date" class="form-control" id="inputDOB" name=inputDOB placeholder="As mentioned in your marksheet" required>
                         </div>
                         <div class="form-group col-md-2">
                             <label for=inputGender>Gender</label>
-                            <select type="text" class="form-control" id=inputGender required>
+                            <select type="text" class="form-control" id=inputGender name=inputGender required>
                                 <option>Male</option>
                                 <option>Female</option>
                                 <option>Others</option>
@@ -47,7 +47,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputEmail">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                            <input type="email" class="form-control" id="inputEmail" name=inputEmail placeholder="Email" required>
                         </div>
                     </div>
                     <div class="form-row">
@@ -57,14 +57,14 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">+91</span>
                                 </div>
-                                <input type="text" class="form-control" id=inputMobile placeholder="" pattern="[456789][0-9]{9}" maxlength=10 required>
+                                <input type="text" class="form-control" id=inputMobile name=inputMobile placeholder="" pattern="[456789][0-9]{9}" maxlength=10 required>
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for=inputCourse>Course</label>
-                            <select type=text class=form-control id=inputCourse required>
+                            <select type=text class=form-control id=inputCourse name=inputCourse required>
                                 <option>B.Tech</option>
                                 <option>M.Tech</option>
                                 <option>MCA</option>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for=inputCourse>Branch</label>
-                            <select type=text class=form-control id=inputCourse required>
+                            <select type=text class=form-control id=inputBranch name=inputBranch required>
                                 <option>Chemical Engineering</option>
                                 <option>Civil Engineering</option>
                                 <option>Computer Science</option>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label for=inputYear>Year</label>
-                            <select type=text class=form-control id=inputYear required>
+                            <select type=text class=form-control id=inputYear name=inputYear required>
                                
                                 <option>First Year</option>
                                 <option>Second Year</option>
@@ -98,17 +98,17 @@
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for=inputRollNo>Roll Number</label>
-                            <input class=form-control type="text" id=inputRollNo required>
+                            <input class=form-control type="text" id=inputRollNo name=inputRollNo required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for=inputUpseeRollNo>UPSEE Roll Number</label>
-                            <input class=form-control type="text" id=inputUpseeRollNo required>
+                            <input class=form-control type="text" id=inputUpseeRollNo name=inputUpseeRollNo required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for=inputCategory>Category</label>
-                            <select class=form-control type="text" id=inputCategory required>
+                            <select class=form-control type="text" id=inputCategory name=inputCategory required>
                                 <option>General</option>
                                 <option>OBC</option>
                                 <option>SC</option>
@@ -117,21 +117,21 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label for=inputRank>UPSEE Rank</label>
-                            <input class=form-control type="text" id=inputRank required>
+                            <input class=form-control type="text" id=inputRank name=inputRank required>
                         </div>
                         <div class="form-group col-md-3">
                             <label for=inputRank>UPSEE Category Rank</label>
-                            <input class=form-control type="text" id=inputCategoryRank>
+                            <input class=form-control type="text" id=inputCategoryRank name=inputCategoryRank>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCrrAddress">Correspondence Address</label>
-                            <textarea type="text" class="form-control" id="inputCrrAddress" placeholder="" required></textarea>
+                            <textarea type="text" class="form-control" id="inputCrrAddress" placeholder="" name=inputCrrAddress required></textarea>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPermAddress">Permanent Address </label>
-                            <textarea type="text" class="form-control" id="inputPermAddress" placeholder="" required></textarea>
+                            <textarea type="text" class="form-control" id="inputPermAddress" placeholder="" name=inputPermAddress required></textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -143,21 +143,21 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity" placeholder="City" required>
+                            <input type="text" class="form-control" id="inputCity" placeholder="City" name=inputCity required>
                             <div class="invalid-tooltip">
                                 Please provide a valid city.
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="inputState">State</label>
-                            <input type="text" class="form-control" id="inputState" placeholder="State" required>
+                            <input type="text" class="form-control" id="inputState" placeholder="State" name=inputState required>
                             <div class="invalid-tooltip">
                                 Please provide a valid state.
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip" placeholder="Zip" required>
+                            <input type="text" class="form-control" id="inputZip" placeholder="Zip" name=inputZip required>
                             <div class="invalid-tooltip">
                                 Please provide a valid zip.
                             </div>
@@ -171,35 +171,35 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for=inputFatherName>Father's Name</label>
-                            <input type="text" class="form-control" id=inputFatherName placeholder="As mentioned in your marksheet" required>
+                            <input type="text" class="form-control" id=inputFatherName placeholder="As mentioned in your marksheet" name=inputFatherName required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for=inputMotherName>Mother's Name</label>
-                            <input type="text" class="form-control" id=inputMotherName placeholder="As mentioned in your marksheet" required>
+                            <input type="text" class="form-control" id=inputMotherName placeholder="As mentioned in your marksheet" name=inputMotherName required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for=inputFatherOccupation>Father's Occupation</label>
-                            <input type="text" class="form-control" id=inputFatherOccupation placeholder="" required>
+                            <input type="text" class="form-control" id=inputFatherOccupation name=inputFatherOccupation placeholder="" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for=inputMotherOccupation>Mother's Occupation</label>
-                            <input type="text" class="form-control" id=inputMotherOccupation placeholder="" required>
+                            <input type="text" class="form-control" id=inputMotherOccupation name=inputMotherOccupation placeholder="" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for=inputFatherIncome>Father's Annual Income</label>
-                            <input type="text" class="form-control" id=inputFatherIncome placeholder="" required>
+                            <input type="text" class="form-control" id=inputFatherIncome name=inputFatherIncome placeholder="" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for=inputMotherIncome>Mother's Annual Income</label>
-                            <input type="text" class="form-control" id=inputMotherIncome placeholder="" required>
+                            <input type="text" class="form-control" id=inputMotherIncome name=inputMotherIncome placeholder="" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for=inputIncome>Total Annual Income</label>
-                            <input type="text" class="form-control" id=inputIncome readonly placeholder="">
+                            <input type="text" class="form-control" id=inputIncome name=inputIncome readonly placeholder="">
                         </div>
                     </div>
                     <div class="form-row col-md-6">
@@ -233,7 +233,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <button class="btn btn-primary" type=submit>Submit</button>
+                        <button class="btn btn-primary" type=submit name=submit>Submit</button>
                     </div>
                 </div>
             </div>

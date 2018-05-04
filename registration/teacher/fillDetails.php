@@ -1,3 +1,42 @@
+<?php	
+$teachercookie = "teacherdetail";
+$email = "";
+
+if ( isset($_COOKIE[$teachercookie]) )
+{
+	header("Location: uploaddetailteacher.php");
+	exit;
+}
+
+if ( isset($_COOKIE["submit"]) )
+{
+	setcookie("filldetail", "", time() - 3600, "/");
+	echo "<script> alert('Please fill the following credentials to complete your form.'); </script>";
+}
+
+/*
+if ( isset($_COOKIE["wrong"]) )
+{
+	setcookie("wrong", "", time() - 3600, "/");
+	echo "<script> alert('Invalid details entered!'); </script>";
+}
+
+if ( isset($_COOKIE["forgot"]) )
+{
+	setcookie("forgot", "", time() - 3600, "/");
+	echo "<script> alert('A recovery email has been sent to your registered email.'); </script>";
+}
+
+if ( isset($_COOKIE["aexist"]) )
+{
+	setcookie("aexist", "", time() - 3600, "/");
+	echo "<script> alert('An account with the email already exists.'); </script>";
+}
+
+*/
+?>
+
+
 <!doctype html>
 <html>
 
@@ -10,17 +49,17 @@
 
 <body>
 	<div class=container>
-		<form method="post" action="../connectteacher.php">
+		<form method="post" action="uploaddetailteacher.php">
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="inputName">Name</label>
-					<input type="text" class="form-control" id=inputName placeholder="As mentioned in your marksheet" required>
+					<input type="text" class="form-control" id=inputName name=inputName placeholder="As mentioned in your marksheet" required>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputEmail">Email</label>
-					<input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+					<input type="email" class="form-control" id="inputEmail" name=inputEmail placeholder="Email" required>
 				</div>
 			</div>
 			<div class="form-row">
@@ -30,14 +69,14 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text">+91</span>
 						</div>
-						<input type="text" class="form-control" id=inputMobile placeholder="" pattern="[456789][0-9]{9}" maxlength=10 required>
+						<input type="text" class="form-control" id=inputMobile placeholder="" name=inputMobile pattern="[456789][0-9]{9}" maxlength=10 required>
 					</div>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-3">
 					<label for="inputDesig">Designation</label>
-					<select type=text class=form-control id=inputDesig required>
+					<select type=text class=form-control id=inputDesig name=inputDesig required>
                                 <option>Associate Proffessor</option>
                                 <option>Proffessor</option>
                                 <option>Head Of Dept</option>
@@ -46,7 +85,7 @@
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputDept">Department</label>
-					<select type=text class=form-control id=inputDept required>
+					<select type=text class=form-control id=inputDept name=inputDept required>
                                 <option>Chemical Engineering</option>
                                 <option>Civil Engineering</option>
                                 <option>Computer Science</option>
@@ -59,7 +98,7 @@
 				</div>
 			</div>
 			<div class="form-row">
-					<button class="btn btn-primary" type=submit>Submit</button>
+					<button class="btn btn-primary" type=submit name=submit>Submit</button>
 				</div>
 		</form>
 	</div>

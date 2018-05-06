@@ -22,11 +22,11 @@ if(!$conn) {
 $ins_query;
 if( isset($_POST['submit'])) {
 	
-	$name= $_POST['inputName'];
-	$email= $_POST['inputEmail'];
-	$mobile= $_POST['inputMobile'];
-	$desig= $_POST['inputDesig'];
-	$dept= $_POST['inputDept'];
+	$name= mysqli_real_escape_string($conn,$_POST['inputName']);
+	$email= mysqli_real_escape_string($conn,$_POST['inputEmail']);
+	$mobile= mysqli_real_escape_string($conn,['inputMobile']);
+	$desig= mysqli_real_escape_string($conn,$_POST['inputDesig']);
+	$dept= mysqli_real_escape_string($conn,$_POST['inputDept']);
 	
 	$ins_query="INSERT INTO `teacher`(`Name`, `Email`,`Mobile No`, `Designation`, `Department`) VALUES ('$name', '$email', '$mobile', '$desig', '$dept')";
 	

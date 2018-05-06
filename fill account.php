@@ -43,6 +43,7 @@ for($i=1; $i<60; $i++)
 		$email=$def.(string)$i;
 	$ran=RandomString();
     $password.=$email;
+	mkdir('registration/student/'.$email);
     $ins_query.="INSERT INTO `student_account`(`Email`, `Password`) VALUES ($email, $password);";
 }
 	

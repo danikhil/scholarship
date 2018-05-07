@@ -47,7 +47,7 @@
 					<div class="form-row">
 						<div class="form-group col-md-4">
 							<label for="inputEmail">Email</label>
-							<input type="text" class="form-control" id="inputEmail" name=inputEmail placeholder="Email" required>
+							<input type="text" class="form-control" id="inputEmail" name=inputEmail placeholder="Email Address" required>
 						</div>
 					</div>
 					<div class="form-row">
@@ -68,7 +68,7 @@
                                 <option>B.Tech</option>
                                 <option>M.Tech</option>
                                 <option>MCA</option>
-                                <option>MBAS</option>
+                                <option>MBA</option>
                             </select>
 						</div>
 						<div class="form-group col-md-6">
@@ -78,7 +78,7 @@
                                 <option>Civil Engineering</option>
                                 <option>Computer Science</option>
                                 <option>Electrical Engineering</option>
-                                <option>Electronics Engineering</option>
+                                <option>Electronics and Communication Engineering</option>
                                 <option>Electronics and Instrumental Engineering</option>
                                 <option>Information Technology</option>
                                 <option>Mechnical Engineering</option>

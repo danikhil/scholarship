@@ -47,7 +47,7 @@
 					<div class="form-row">
 						<div class="form-group col-md-4">
 							<label for="inputEmail">Email</label>
-							<input type="text" class="form-control" id="inputEmail" name=inputEmail placeholder="Email" required>
+							<input type="email" class="form-control" id="inputEmail" name=inputEmail placeholder="Email" required>
 						</div>
 					</div>
 					<div class="form-row">
@@ -211,25 +211,25 @@
 				</div>
 				<div class="tab-pane fade" id="step3" role="tabpanel" aria-labelledby="step3-tab">
 					<div class="form-row col-md-12">
-						<div class="form-group col-md-6">
-							<label for="uploadPhoto">Upload Photograph</label>
-							<input type="file" class="form-control-file" id="uploadPhoto" name="upload[]" required>
-						</div>
-						<div class="form-group col-md-6">
-							<label for="inputPhotoPreview">Uploaded Preview</label>
-							<img id="inputPhotoPreview" src="" alt="" />
-						</div>
-					</div>
-					<div class="form-row col-md-12">
-						<div class="form-group col-md-6">
-							<label for="uploadSign">Upload Signature</label>
-							<input type="file" class="form-control-file" id="uploadSign" name="upload[]" required>
-						</div>
-						<div class="form-group col-md-6">
-							<label for="inputSignPreview">Uploaded Preview</label>
-							<img id="inputSignPreview" src="" alt="" />
-						</div>
-					</div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPhoto">Upload Photograph</label>
+                            <input type="file" class="form-control-file" id="inputPhoto" name="photo" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPhotoPreview">Uploaded Preview</label>
+                            <img id="inputPhotoPreview" src="" alt="" style="height: 128px; width: 100px" />
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="inputSign">Upload Signature</label>
+                            <input type="file" class="form-control-file" id="inputSign" name="sign" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputSignPreview">Uploaded Preview</label>
+                            <img id="inputSignPreview" src="" alt="" style="height: 40px; width: 100px"/>
+                        </div>
+                    </div>
 					<div class="form-row">
 						<button class="btn btn-primary" type=submit name=submit>Submit</button>
 					</div>
@@ -252,7 +252,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script src="../assests/js/student/main.js"></script>
 
 </body>

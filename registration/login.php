@@ -17,22 +17,22 @@
 
 	<p class="tip">Sign In To Your Account</p>
 	<div class="cont">
-		<form>
+		<form method=post action=teacher/sign-in.php>
 			<div class="form sign-in">
 				<h2>Faculty Login</h2>
 				<label>
       				<span>Email</span>
-      				<input type="email"/>
+      				<input type="text" name=username/>
     			</label>
 				<label>
       				<span>Password</span>
-      				<input type="password" />
+      				<input type="password" name=password/>
     			</label>
 				<p class="forgot-pass">Forgot password?</p>
-				<button type="button" class="submit">Sign In</button>
+				<button type="button" class="submit" name=submit>Sign In</button>
 			</div>
 		</form>
-		<form>
+		<form method="post" action="student/sign-in.php">
 			<div class="sub-cont">
 				<div class="img">
 					<div class="img__text m--student">
@@ -52,14 +52,14 @@
 					<h2>Student Login</h2>
 					<label>
 						<span>Email</span>
-						<input type="email" />
+						<input type="text" name=username required/>
 				  	</label>
 					<label>
         				<span>Password</span>
-        				<input type="password" />
+        				<input type="password" name=password required/>
       				</label>
 					<p class="forgot-pass">Forgot password?</p>
-					<button type="button" class="submit">Sign In</button>
+					<button class="submit" type=submit name=submit>Sign In</button>
 				</div>
 			</div>
 		</form>

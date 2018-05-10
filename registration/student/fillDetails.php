@@ -7,6 +7,32 @@
 </head>
 
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class=container>
+			<a class="navbar-brand" style="margin-right:600px;" href="#">Institute of Engineeering and Technology</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  			</button>
+			<div class="collapse navbar-collapse " id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<?php session_start(); echo $_SESSION['login_user']; ?> 
+        			</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="logout.php">Logout</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<nav aria-label="breadcrumb">
+		<div class=container>
+  			<ol class="breadcrumb">
+    		<li class="breadcrumb-item active" aria-current="page">Fill the form to complete first time registration.</li>
+  			</ol>
+		</div>
+	</nav>
 	<div class=container>
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
@@ -97,7 +123,8 @@
 					<div class="form-row">
 						<div class="form-group col-md-3">
 							<label for=inputRollNo>Roll Number</label>
-							<input class=form-control type="text" id=inputRollNo name=inputRollNo required>
+							<input class=form-control type="text" id=inputRollNo name=inputRollNo readonly>
+							<script>document.getElementById('inputRollNo').value=<?php echo $_SESSION['login_user'];?></script>
 						</div>
 						<div class="form-group col-md-6">
 							<label for=inputUpseeRollNo>UPSEE Roll Number</label>

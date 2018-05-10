@@ -9,6 +9,32 @@
 </head>
 
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class=container>
+			<a class="navbar-brand" style="margin-right:600px;" href="#">Institute of Engineeering and Technology</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  			</button>
+			<div class="collapse navbar-collapse " id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						1605213026
+        			</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="logout.php">Logout</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<nav aria-label="breadcrumb">
+		<div class=container>
+  			<ol class="breadcrumb">
+    		<li class="breadcrumb-item active" aria-current="page">Fill the form to complete first time registration.</li>
+  			</ol>
+		</div>
+	</nav>
 	<div class=container>
 		<form method="post" action="uploaddetailteacher.php">
 			<div class="form-row">
@@ -59,12 +85,11 @@
 				</div>
 			</div>
 			<div class="form-row">
-					<button class="btn btn-primary" type=submit name=submit>Submit</button>
-				</div>
+				<button class="btn btn-primary" type=submit name=submit>Submit</button>
+			</div>
 		</form>
 	</div>
 	<script>
-
 	</script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

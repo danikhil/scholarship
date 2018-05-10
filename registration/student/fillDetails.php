@@ -19,7 +19,7 @@
 						<?php session_start(); echo $_SESSION['login_user']; ?> 
         			</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="logout.php">Logout</a>
+							<a class="dropdown-item" href="../logout.php">Logout</a>
 						</div>
 					</li>
 				</ul>

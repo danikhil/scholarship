@@ -25,7 +25,7 @@ if( isset($_POST['submit'])) {
          $_SESSION['login_user'] = $user;
 		
 		$srh = "SELECT * FROM `student` WHERE `Rollnumber` = $user";
-		if(mysqli_query($conn,$srch)) {
+		if(mysqli_query($conn,$srh)) {
 			header("location: ../dashboard/student/examples/dashboard.php");
 		}
          
@@ -36,10 +36,10 @@ if( isset($_POST['submit'])) {
 	
 	else {
          $error = "Your Login Name or Password is invalid";
-		header('Location:../login.php');
+		header('Location: ../login.php');
     }
 }
 else {
-	echo"something wrong";
+	echo "something wrong";
 }
 ?>

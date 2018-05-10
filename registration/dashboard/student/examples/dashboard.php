@@ -79,7 +79,7 @@
             </a>
           </li>
           <li class="active-pro">
-            <a href="./upgrade.html">
+            <a href="../../../logout.php">
               <i class="now-ui-icons media-1_button-power"></i>
               <p>Logout</p>
             </a>
@@ -116,7 +116,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="#">Logout</a>
+					<a class="dropdown-item" href="../../../logout.php">Logout</a>
                 </div>
               </li>
             </ul>

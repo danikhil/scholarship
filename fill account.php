@@ -44,7 +44,13 @@ for($i=1; $i<60; $i++)
 	$ran=RandomString();
     $password.=$email;
 	mkdir('registration/student/'.$email);
-    $ins_query.="INSERT INTO `student_account`(`Email`, `Password`) VALUES ($email, $password);";
+	$qry = "SELECT * FROM `student_account` WHERE `Email`= $email"
+	if(!mysqli_query($conn,qry)) {
+		$ins_query.="INSERT INTO `student_account`(`Email`, `Password`) VALUES ($email, $password);";
+	}
+	else {
+		echo "User already exists";
+	}
 }
 	
 	if(mysqli_multi_query($conn, $ins_query)) {

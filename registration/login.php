@@ -9,7 +9,7 @@ $conn = mysqli_connect($server, $user, $pass, $db);
 
 if(isset($_SESSION['login_user'])) {
 	$user = $_SESSION['login_user'];
-	$qry = "SELECT * FROM `student` WHERE `Rollnumber` = $user";
+	$qry = "SELECT `*` FROM `student` WHERE `Rollnumber` = $user";
 	$qry2 = "SELECT * FROM `teacher` WHERE `Email` = $user";
 	$qry3 = "SELECT * FROM `student_account` WHERE `Email`= $user";
 	$qry4 = "SELECT * FROM `teacher_account` WHERE `Email`= $user";
@@ -53,7 +53,7 @@ if(isset($_SESSION['login_user'])) {
 
 	<p class="tip">Sign In To Your Account</p>
 	<div class="cont">
-		<form method="post" action=teacher/sign-in.php>
+		<form method="post" action= teacher/sign-in.php>
 			<div class="form sign-in">
 				<h2>Faculty Login</h2>
 				<label>

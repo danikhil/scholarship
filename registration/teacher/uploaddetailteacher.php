@@ -24,7 +24,7 @@ if( isset($_POST['submit'])) {
 	
 	$name= mysqli_real_escape_string($conn,$_POST['inputName']);
 	$email= mysqli_real_escape_string($conn,$_POST['inputEmail']);
-	$mobile= mysqli_real_escape_string($conn,['inputMobile']);
+	$mobile= mysqli_real_escape_string($conn,$_POST['inputMobile']);
 	$desig= mysqli_real_escape_string($conn,$_POST['inputDesig']);
 	$dept= mysqli_real_escape_string($conn,$_POST['inputDept']);
 	

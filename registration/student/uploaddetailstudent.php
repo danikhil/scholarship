@@ -19,38 +19,36 @@ if(!$conn) {
 	die("Could not connect to data base:".$conn->connect_error);
 }
 
-echo "hello";
-
 $ins_query;
 if( isset($_POST['submit'])) {
 	
-	$name=$_POST['inputName'];
-    $dob=$_POST['inputDOB'];
-    $gen=$_POST['inputGender'];
-    $email=$_POST['inputEmail'];
-    $mob=$_POST['inputMobile'];
-    $cou=$_POST['inputCourse'];
-	$br=$_POST['inputBranch'];
-    $yr=$_POST['inputYear'];
-    $roll=$_POST['inputRollNo'];
-    $uroll=$_POST['inputUpseeRollNo'];
-    $cat=$_POST['inputCategory'];
-    $rank=$_POST['inputRank'];
-	$crank=$_POST['inputCategoryRank'];
-    $cadd=$_POST['inputCrrAddress'];
-    $padd=$_POST['inputPermAddress'];
-    $city=$_POST['inputCity'];
-    $state=$_POST['inputState'];
-    $pin=$_POST['inputZip'];
-    $fn=$_POST['inputFatherName'];
-    $mn=$_POST['inputMotherName'];
-    $fo=$_POST['inputFatherOccupation'];
-    $mo=$_POST['inputMotherOccupation'];
-    $fi=$_POST['inputFatherIncome'];
-    $mi=$_POST['inputMotherIncome'];
-    $inc=$_POST['inputIncome'];
+	$name=mysqli_real_escape_string($conn,$_POST['inputName']);
+    $dob=mysqli_real_escape_string($conn,$_POST['inputDOB']);
+    $gen=mysqli_real_escape_string($conn,$_POST['inputGender']);
+    $email=mysqli_real_escape_string($conn,$_POST['inputEmail']);
+    $mob=mysqli_real_escape_string($conn,$_POST['inputMobile']);
+    $cou=mysqli_real_escape_string($conn,$_POST['inputCourse']);
+	$br=mysqli_real_escape_string($conn,$_POST['inputBranch']);
+    $yr=mysqli_real_escape_string($conn,$_POST['inputYear']);
+    $roll=mysqli_real_escape_string($conn,$_POST['inputRollNo']);
+    $uroll=mysqli_real_escape_string($conn,$_POST['inputUpseeRollNo']);
+    $cat=mysqli_real_escape_string($conn,$_POST['inputCategory']);
+    $rank=mysqli_real_escape_string($conn,$_POST['inputRank']);
+	$crank=mysqli_real_escape_string($conn,$_POST['inputCategoryRank']);
+    $cadd=mysqli_real_escape_string($conn,$_POST['inputCrrAddress']);
+    $padd=mysqli_real_escape_string($conn,$_POST['inputPermAddress']);
+    $city=mysqli_real_escape_string($conn,$_POST['inputCity']);
+    $state=mysqli_real_escape_string($conn,$_POST['inputState']);
+    $pin=mysqli_real_escape_string($conn,$_POST['inputZip']);
+    $fn=mysqli_real_escape_string($conn,$_POST['inputFatherName']);
+    $mn=mysqli_real_escape_string($conn,$_POST['inputMotherName']);
+    $fo=mysqli_real_escape_string($conn,$_POST['inputFatherOccupation']);
+    $mo=mysqli_real_escape_string($conn,$_POST['inputMotherOccupation']);
+    $fi=mysqli_real_escape_string($conn,$_POST['inputFatherIncome']);
+    $mi=mysqli_real_escape_string($conn,$_POST['inputMotherIncome']);
+    $inc=mysqli_real_escape_string($conn,$_POST['inputIncome']);
 	
-	$ins_query="INSERT INTO `student`(`Name`, `DOB`, `Gender`, `Email`, `Mobile No`, `Course`, `Branch`, `Year`, `Rollnumber`, `UPRollnumber`, `Category`, `Rank`, `CatRank`, `CAddress`, `PAddress`, `City`, `State`, `Pincode`, `Fathername`, `Mothername`, `Fatherocc`, `Motherocc`, `FIncome`, `MIncome`, `Income`) VALUES ($name,$dob,$gen,$email,$mob,$cou,$br,$yr,$roll,$uroll,$cat,$rank,$crank,$cadd,$padd,$city,$state,$pin,$fn,$mn,$fo,$mo,$fi,$mi,$inc);";
+	$ins_query="INSERT INTO `student`(`Name`, `DOB`, `Gender`, `Email`, `Mobile No`, `Course`, `Branch`, `Year`, `Rollnumber`, `UPRollnumber`, `Category`, `Rank`, `CatRank`, `CAddress`, `PAddress`, `City`, `State`, `Pincode`, `Fathername`, `Mothername`, `Fatherocc`, `Motherocc`, `FIncome`, `MIncome`, `Income`) VALUES ($name,$dob,$gen,$email,$mob,$cou,$br,$yr,$roll,$uroll,$cat,$rank,$crank,$cadd,$padd,$city,$state,$pin,$fn,$mn,$fo,$mo,$fi,$mi,$inc)";
 	
 	//file related code
 	

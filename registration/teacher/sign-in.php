@@ -12,9 +12,9 @@ if(!$conn) {
 }
 
 if( isset($_POST['submit'])) {
-	$user=mysqli_real_escape_string($conn,$_POST['username']);	
+	$user=$_POST['username'];	
 	$pass=mysqli_real_escape_string($conn,$_POST['password']);
-	$qry = "SELECT * FROM `teacher_account` WHERE `Email` = $user and `Password` = $pass";
+	$qry = "SELECT `ID`, `Email`, `Password` FROM `teacher_account` WHERE `Email` = $user and `Password` = $pass";
 	$result = mysqli_query($conn,$qry);
 	$row = mysqli_fetch_array($result,MYSQLI_BOTH);
 	$active = $row['active'];
@@ -24,13 +24,14 @@ if( isset($_POST['submit'])) {
 	if($count == 1) {
          $_SESSION['login_user'] = $user;
 		
-		$srh = "SELECT * FROM `teacher` WHERE `Email` = $user";
-		if(mysqli_query($conn,$srh)) {
-			header("Location: ../dashboard/student/examples/dashboard.php");
+		$srh = "SELECT `Rollnumber` FROM `student` WHERE `Email` = $user";
+		$res = mysqli_query($conn,$srh);
+		if(mysqli_num_rows($res)==1) {
+			header("location: ../dashboard/teacher/examples/dashboard.php");
 		}
          
          else {
-			 header("Location: fillDetails.php");
+			 header("location: fillDetails.php");
 		 }
     }
 	
@@ -39,6 +40,7 @@ if( isset($_POST['submit'])) {
 		header('Location: ../login.php');
     }
 }
+
 else {
 	echo "something wrong";
 }

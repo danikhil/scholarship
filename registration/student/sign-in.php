@@ -24,8 +24,9 @@ if( isset($_POST['submit'])) {
 	if($count == 1) {
          $_SESSION['login_user'] = $user;
 		
-		$srh = "SELECT * FROM `student` WHERE `Rollnumber` = $user";
-		if(mysqli_query($conn,$srh)) {
+		$srh = "SELECT `Rollnumber` FROM `student` WHERE `Rollnumber` = $user";
+		$res = mysqli_query($conn,$srh);
+		if(mysqli_num_rows($res)==1) {
 			header("location: ../dashboard/student/examples/dashboard.php");
 		}
          

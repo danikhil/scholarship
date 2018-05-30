@@ -1,3 +1,25 @@
+<?php
+session_start();
+$server = "localhost";
+$user = "root";
+$pass = "";
+$db = "scholarshipdb";
+
+$conn = mysqli_connect($server, $user, $pass, $db);
+
+if(!$conn) {
+	die("Could not connect to data base:".$conn->connect_error);
+}
+
+$email = $_SESSION['login_user'];
+$qry = "SELECT * FROM `teacher` WHERE `Email` = '$email'";
+$res = mysqli_query($conn,$qry);
+if(mysqli_num_rows($res)==1) {
+	header("Location: ../dashboard/teacher/examples/dashboard.php");
+}
+	
+?>
+
 <!doctype html>
 <html>
 
@@ -18,10 +40,10 @@
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<?php session_start(); echo $_SESSION['login_user']; ?>
+						<?php echo $_SESSION['login_user']; ?>
         			</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="logout.php">Logout</a>
+							<a class="dropdown-item" href="../logout.php">Logout</a>
 						</div>
 					</li>
 				</ul>
@@ -47,6 +69,7 @@
 				<div class="form-group col-md-4">
 					<label for="inputEmail">Email</label>
 					<input type="email" class="form-control" id="inputEmail" name=inputEmail placeholder="Email" required>
+					<script>document.getElementById('inputEmail').value ="<?php echo $_SESSION['login_user']; ?>"</script>
 				</div>
 			</div>
 			<div class="form-row">

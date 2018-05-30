@@ -8,21 +8,13 @@ $db = "scholarshipdb";
 $conn = mysqli_connect($server, $user, $pass, $db);
 
 if(isset($_SESSION['login_user'])) {
-	$user = $_SESSION['login_user'];
-	$qry = "SELECT `*` FROM `student` WHERE `Rollnumber` = $user";
-	$qry2 = "SELECT * FROM `teacher` WHERE `Email` = $user";
-	$qry3 = "SELECT * FROM `student_account` WHERE `Email`= $user";
-	$qry4 = "SELECT * FROM `teacher_account` WHERE `Email`= $user";
-	if(mysqli_query($conn,$qry)) {
-		header('Location: dashboard/student/examples/dashboard.php');
-	}
-	else if(mysqli_query($conn,$qry2)) {
-		header('Location: dashboard/teacher/examples/dashboard.php');
-	}
-	else if(mysqli_query($conn,$qry3)) {
+	$username = $_SESSION['login_user'];
+	$qry3 = "SELECT * FROM `student_account` WHERE `Email`= '$username'";
+	$qry4 = "SELECT * FROM `teacher_account` WHERE `Email`= '$username'";
+	if(mysqli_num_rows(mysqli_query($conn,$qry3))==1) {
 		header('Location: student/filldetail.php');
 	}
-	else if(mysqli_query($conn,$qry4)) {
+	else if(mysqli_num_rows(mysqli_query($conn,$qry4))==1) {
 		header('Location: teacher/filldetail.php');
 	}
 	else {

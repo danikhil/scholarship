@@ -1,3 +1,24 @@
+<?php
+session_start();
+$server = "localhost";
+$user = "root";
+$pass = "";
+$db = "scholarshipdb";
+
+$conn = mysqli_connect($server, $user, $pass, $db);
+
+if(!$conn) {
+	die("Could not connect to data base:".$conn->connect_error);
+}
+
+$roll = $_SESSION['login_user'];
+$qry = "SELECT * FROM `student` WHERE `Rollnumber` = '$roll'";
+$res = mysqli_query($conn,$qry);
+if(mysqli_num_rows($res)==1) {
+	header("Location: ../dashboard/student/examples/dashboard.php");
+}
+	
+?>
 <!doctype html>
 <html>
 
@@ -16,7 +37,7 @@
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<?php session_start(); echo $_SESSION['login_user']; ?> 
+						<?php echo $_SESSION['login_user']; ?> 
         			</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<a class="dropdown-item" href="../logout.php">Logout</a>
@@ -45,7 +66,7 @@
 				<a class="nav-link" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">Step 3</a>
 			</li>
 		</ul>
-		<form method="post" action="uploaddetailstudent.php">
+		<form method="post" action="uploaddetailstudent.php" enctype="multipart/form-data">
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
 					<div class="form-row">

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /*
 Filename: uploaddetailstudent.php
 Purpose: Establish connection to MySQL database and upload detail.
@@ -18,6 +18,8 @@ $db = "scholarshipdb";
 if(!$conn) {
 	die("Could not connect to data base:".$conn->connect_error);
 }
+
+$target_dir = $_SESSION['login_user'].'/';
 
 $ins_query;
 if( isset($_POST['submit'])) {
@@ -48,45 +50,22 @@ if( isset($_POST['submit'])) {
     $mi=mysqli_real_escape_string($conn,$_POST['inputMotherIncome']);
     $inc=mysqli_real_escape_string($conn,$_POST['inputIncome']);
 	
-	$ins_query="INSERT INTO `student`(`Name`, `DOB`, `Gender`, `Email`, `Mobile No`, `Course`, `Branch`, `Year`, `Rollnumber`, `UPRollnumber`, `Category`, `Rank`, `CatRank`, `CAddress`, `PAddress`, `City`, `State`, `Pincode`, `Fathername`, `Mothername`, `Fatherocc`, `Motherocc`, `FIncome`, `MIncome`, `Income`) VALUES ($name,$dob,$gen,$email,$mob,$cou,$br,$yr,$roll,$uroll,$cat,$rank,$crank,$cadd,$padd,$city,$state,$pin,$fn,$mn,$fo,$mo,$fi,$mi,$inc)";
+	$ins_query="INSERT INTO `student`(`Name`, `DOB`, `Gender`, `Email`, `Mobile No`, `Course`, `Branch`, `Year`, `Rollnumber`, `UPRollnumber`, `Category`, `Rank`, `CatRank`, `CAddress`, `PAddress`, `City`, `State`, `Pincode`, `Fathername`, `Mothername`, `Fatherocc`, `Motherocc`, `FIncome`, `MIncome`, `Income`) VALUES ('$name','$dob','$gen','$email','$mob','$cou','$br','$yr','$roll','$uroll','$cat','$rank','$crank','$cadd','$padd','$city','$state','$pin','$fn','$mn','$fo','$mo','$fi','$mi','$inc')";
 	
 	//file related code
+	$ext1 = strtolower(pathinfo($target_dir . basename($_FILES["photo"]["name"]),PATHINFO_EXTENSION));
+	$ext2 = strtolower(pathinfo($target_dir . basename($_FILES["sign"]["name"]),PATHINFO_EXTENSION));
+	if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_dir."photo".'.'.$ext1)) {
+        echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
 	
-	if(isset($_FILES['photo'])) {
-		$file_name = $_FILES['photo']['name'];
-		$file_tmp = $_FILES['photo']['tmp_name'];
-		$file_size = $_FILES['photo']['size'];
-		$file_type= $_FILES['photo']['type'];
-
-		if(move_uploaded_file($file_tmp, ''.$roll.'/'.$name_array)) {
-			echo "upload successfull";
-		}
-		else {
-			echo "move_uploaded_file function failed";
-		}
-	}
-	
-	else {
-		echo "error uploading photo";
-	}
-	
-	if(isset($_FILES['sign'])) {
-		$file_name = $_FILES['sign']['name'];
-		$file_tmp = $_FILES['sign']['tmp_name'];
-		$file_size = $_FILES['sign']['size'];
-		$file_type= $_FILES['sign']['type'];
-
-		if(move_uploaded_file($file_tmp, ''.$roll.'/'.$name_array)) {
-			echo "upload successfull";
-		}
-		else {
-			echo "move_uploaded_file function failed";
-		}
-	}
-	
-	else {
-		echo "error uploading photo";
-	}
+	if (move_uploaded_file($_FILES["sign"]["tmp_name"], $target_dir."sign".'.'.$ext2)) {
+        echo "The file ". basename( $_FILES["sign"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
 	
 	if(mysqli_query($conn, $ins_query)) {
 		echo "sucess";

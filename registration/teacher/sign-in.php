@@ -12,9 +12,9 @@ if(!$conn) {
 }
 
 if( isset($_POST['submit'])) {
-	$user=$_POST['username'];	
+	$username=mysqli_real_escape_string($conn,$_POST['username']);	
 	$pass=mysqli_real_escape_string($conn,$_POST['password']);
-	$qry = "SELECT `ID`, `Email`, `Password` FROM `teacher_account` WHERE `Email` = $user and `Password` = $pass";
+	$qry = "SELECT * FROM `teacher_account` WHERE `Email` = '$username' and `Password` = '$pass'";
 	$result = mysqli_query($conn,$qry);
 	$row = mysqli_fetch_array($result,MYSQLI_BOTH);
 	$active = $row['active'];
@@ -22,21 +22,11 @@ if( isset($_POST['submit'])) {
 	$count = mysqli_num_rows($result);
 	
 	if($count == 1) {
-         $_SESSION['login_user'] = $user;
-		
-		$srh = "SELECT `Rollnumber` FROM `student` WHERE `Email` = $user";
-		$res = mysqli_query($conn,$srh);
-		if(mysqli_num_rows($res)==1) {
-			header("location: ../dashboard/teacher/examples/dashboard.php");
-		}
-         
-         else {
-			 header("location: fillDetails.php");
-		 }
+         $_SESSION['login_user'] = $username;
+		header("location: fillDetails.php");
     }
 	
 	else {
-         $error = "Your Login Name or Password is invalid";
 		header('Location: ../login.php');
     }
 }

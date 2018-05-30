@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2018 at 03:23 AM
+-- Generation Time: May 30, 2018 at 03:12 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -21,6 +21,41 @@ SET time_zone = "+00:00";
 --
 -- Database: `scholarshipdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `DOB` date NOT NULL,
+  `Gender` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Mobile No` int(10) NOT NULL,
+  `Course` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Branch` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Year` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Rollnumber` int(20) NOT NULL,
+  `UPRollnumber` int(20) NOT NULL,
+  `Category` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Rank` int(10) NOT NULL,
+  `CatRank` int(6) NOT NULL,
+  `CAddress` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `PAddress` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `City` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `State` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Pincode` int(20) NOT NULL,
+  `Fathername` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Mothername` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Fatherocc` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Motherocc` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `FIncome` int(10) NOT NULL,
+  `MIncome` int(10) NOT NULL,
+  `Income` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -99,9 +134,49 @@ INSERT INTO `student_account` (`ID`, `Email`, `Password`) VALUES
 (58, '1605213058', '1605213058'),
 (59, '1605213059', '1605213059');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher`
+--
+
+CREATE TABLE `teacher` (
+  `ID` int(6) UNSIGNED NOT NULL,
+  `Name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Mobile No` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Designation` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Department` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher_account`
+--
+
+CREATE TABLE `teacher_account` (
+  `ID` int(11) NOT NULL,
+  `Email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Password` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `teacher_account`
+--
+
+INSERT INTO `teacher_account` (`ID`, `Email`, `Password`) VALUES
+(1, 'dsw@ietlucknow.ac.in', 'dswatiet');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `student_account`
@@ -110,14 +185,44 @@ ALTER TABLE `student_account`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `teacher`
+--
+ALTER TABLE `teacher`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `teacher_account`
+--
+ALTER TABLE `teacher_account`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student_account`
 --
 ALTER TABLE `student_account`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT for table `teacher`
+--
+ALTER TABLE `teacher`
+  MODIFY `ID` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `teacher_account`
+--
+ALTER TABLE `teacher_account`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
